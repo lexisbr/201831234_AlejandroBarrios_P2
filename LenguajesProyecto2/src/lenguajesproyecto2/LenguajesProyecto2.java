@@ -17,6 +17,8 @@ public class LenguajesProyecto2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Main a = new Main();
+        a.setVisible(true);
     }
     
 }
