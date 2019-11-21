@@ -83,7 +83,6 @@ public class Analizador extends javax.swing.JFrame {
         txtarea = new javax.swing.JTextPane();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel4.setText("Seleccione su archivo de texto:");
