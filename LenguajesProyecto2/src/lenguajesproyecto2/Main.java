@@ -17,6 +17,8 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setSize(640,390);
+        this.setVisible(true);
     }
 
     /**
@@ -69,7 +71,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(200, 310, 260, 30);
+        jButton4.setBounds(180, 310, 300, 30);
 
         jButton5.setBackground(new java.awt.Color(184, 184, 94));
         jButton5.setFont(new java.awt.Font("Noto Sans CJK SC Bold", 1, 18)); // NOI18N
@@ -77,6 +79,11 @@ public class Main extends javax.swing.JFrame {
         jButton5.setText("Analizador");
         jButton5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -102,8 +109,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
         // TODO add your handling code here:
+        Analizador a = new Analizador();
+        a.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -131,7 +146,7 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

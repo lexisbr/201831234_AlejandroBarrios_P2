@@ -28,7 +28,7 @@ public class Analizador extends javax.swing.JFrame {
      */
     public Analizador() {
         initComponents();
-        this.setSize(640,480);
+        this.setSize(640,500);
         
         // Archivos a = new Archivos();
        // System.out.println(a.leerTxt("/home/alejandrobr/NetBeansProjects/201831234_AlejandroBarrios_P2/LenguajesProyecto2/src/txt/prueba.txt"));
@@ -76,6 +76,7 @@ public class Analizador extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        guardarTexto1 = new javax.swing.JButton();
         abrirDocumento = new javax.swing.JButton();
         guardarTexto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -92,6 +93,15 @@ public class Analizador extends javax.swing.JFrame {
         jLabel5.setText("Analizador Lexico");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(230, 10, 170, 30);
+
+        guardarTexto1.setText("Guardar Texto");
+        guardarTexto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarTexto1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(guardarTexto1);
+        guardarTexto1.setBounds(230, 440, 152, 30);
 
         abrirDocumento.setText("Abrir Documento");
         abrirDocumento.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +121,6 @@ public class Analizador extends javax.swing.JFrame {
         getContentPane().add(guardarTexto);
         guardarTexto.setBounds(400, 50, 152, 30);
 
-        txtarea.setEnabled(false);
         jScrollPane1.setViewportView(txtarea);
 
         getContentPane().add(jScrollPane1);
@@ -119,7 +128,7 @@ public class Analizador extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoblanco.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 710, 450);
+        jLabel2.setBounds(10, -50, 710, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,7 +154,20 @@ public class Analizador extends javax.swing.JFrame {
 
     private void guardarTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarTextoActionPerformed
         // TODO add your handling code here:
-     /*   if(seleccionar.showDialog(null,"Guardar")==JFileChooser.APPROVE_OPTION){
+     /* 
+        }*/
+         String Documento=txtarea.getText();
+         
+         System.out.println(Documento);
+         Automata a = new Automata();
+         a.Automata(Documento);
+         
+        
+    }//GEN-LAST:event_guardarTextoActionPerformed
+
+    private void guardarTexto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarTexto1ActionPerformed
+        // TODO add your handling code here:
+          if(seleccionar.showDialog(null,"Guardar")==JFileChooser.APPROVE_OPTION){
             archivo=seleccionar.getSelectedFile();
             if(archivo.getName().endsWith("txt")){
                 String Documento=txtarea.getText();
@@ -158,15 +180,8 @@ public class Analizador extends javax.swing.JFrame {
             }else{
                 JOptionPane.showMessageDialog(null, "Guardar documento.");
             }
-        }*/
-         String Documento=txtarea.getText();
-         
-         System.out.println("sho"+Documento);
-         Automata a = new Automata();
-         a.Automata(Documento);
-         
-        
-    }//GEN-LAST:event_guardarTextoActionPerformed
+          }
+    }//GEN-LAST:event_guardarTexto1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,6 +223,7 @@ public class Analizador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirDocumento;
     private javax.swing.JButton guardarTexto;
+    private javax.swing.JButton guardarTexto1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
